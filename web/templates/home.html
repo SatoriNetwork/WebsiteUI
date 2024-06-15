@@ -630,4 +630,14 @@
   }
   drawDistributionRate();
 </script>
+
+<!-- ROADMAP -->
+<script>
+  document.querySelectorAll('.vtimeline-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const content = item.querySelector('.vtimeline-content');
+      content.classList.toggle('expanded');
+    });
+  });
+</script>
 {% endblock %}

@@ -1,75 +1,176 @@
+<style>
+  .vtimeline-container {
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .vtimeline {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .vtimeline-header {
+    width: 100%;
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .vtimeline-header h5 {
+    color: #333333;
+    margin: 0;
+  }
+  
+  .vtimeline-item {
+    display: inline-block;
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+    min-width: 200px;
+    margin: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .vtimeline-content h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #444444;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  .vtimeline-content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    text-align: left;
+    white-space: normal;
+    word-wrap: break-word;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .vtimeline-content p.more-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+  
+  .vtimeline-content.expanded p.more-content {
+    max-height: 100px; /* Adjust as necessary */
+    opacity: 1;
+  }
+  
+  .vtimeline-accomplished {
+    border: 2px solid grey;
+  }
+  
+  .vtimeline-work-in-progress {
+    border: 2px dashed grey;
+  }
+  
+  .vtimeline-plans {
+    color: grey;
+    border: 1px solid lightgrey;
+    opacity: 0.6;
+  }
+</style>
 <center>
-    <div class="fade-in">
-      <p class="textFont">Satori is a network of nodes, all working together to predict the future.</p>
-      <p class="textFont">Anyone can publish a data feed to the network and the nodes will predict the future of that data feed.</p>
-      <p class="textFont">Each node tries to make better and better predictions of the data feeds assigned to it.</p>
-      <!--
-      <p style="color:white;">✔</p>
-      -->
-      <br/>
-      <button class="textFontButton">Roadmap</button>
-      <br/>
-      <br/>
-      <a href="#phase0"><p class="textFont" style="cursor: pointer;">Phase 0 - Development</p></a>
-      <a href="#phase1"><p class="textFont" style="cursor: pointer;">Phase 1 - Public Good</p></a>
-      <a href="#phase2"><p class="textFont" style="cursor: pointer;">Phase 2 - Market Platform</p></a>
-      <a href="#phase3"><p class="textFont" style="cursor: pointer;">Phase 3 - Fully Decentralized</p></a>
-      <br/>
-      <br/>
-      <div class="phase">
-        <p class="textFont phase-border" id="phase0">Phase 0<br />Development</p>
-      </div>
-      <div class="container">
-        <div class="timeline-item" date-is='November 2021'>
-          <h2 class="textFontButton">Satori Network Conceptualized as the Simplest Approach to Distributed AI</h2>
-          <p class="textFont">A network of computing nodes all working together to predict the future of everything, and making those predictions freely available.</p>
-        </div>
-        <div class="timeline-item" date-is='Q1 2022'>
-          <h2 class="textFontButton">Proof of Concept Engine Produced</h2>
-          <p class="textFont">The core of a Satori Neuron is an automated all-purpose prediction engine.</p>
-        </div>
-        <div class="timeline-item" date-is='Q2 2022 - Q4 2023'>
-          <h2 class="textFontButton">Satori Development</h2>
-          <p class="textFont">The Satori Neuron, peer-to-peer protocol, and supporting infrastructure.</p>
-        </div>
-        <div class="timeline-item" date-is='January 1st 2024'>
-          <h2 class="textFontButton">Satori Alpha Release</h2>
-          <p class="textFont"><a href="https://medium.com/@jordan.kay/satori-in-alpha-821bdb90f77e" target='_blank'>Testing Satori Network. Click here for announcement.</a></p>
-        </div>
-        <div class="timeline-item" date-is='March 3rd 2024'>
-          <h2 class="textFontButton">Satori Beta Release</h2>
-          <p class="textFont">Testing Satori Network with payments.</p>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+      <div class="vtimeline-container">
+        <div class="vtimeline">
+          <div class="vtimeline-header">
+            <h5>AI Engine</h5>
+          </div>
+          <div class="vtimeline-item vtimeline-accomplished">
+            <div class="vtimeline-content">
+              <h3>Build MVP</h3>
+              <p>The AI Engine must: <br>• predict the future<br>• make better predictions over time.</p>
+              <p class="more-content">Additional details about building the MVP can go here.</p>
+            </div>
+          </div>
+          <div class="vtimeline-item vtimeline-work-in-progress">
+            <div class="vtimeline-content">
+              <h3>Add simple GPT models</h3>
+              <p>Chronos and other GPT models integrated with existing ML algorithms.</p>
+              <p class="more-content">Additional details about adding GPT models can go here.</p>
+            </div>
+          </div>
+          <div class="vtimeline-item vtimeline-plans">
+            <div class="vtimeline-content">
+              <h3>Improve Correlation Search</h3>
+              <p>Leverage network effects for a more efficient guided search of correlated datastreams.</p>
+              <p class="more-content">Additional details about improving correlation search can go here.</p>
+            </div>
+          </div>
+          <div class="vtimeline-item vtimeline-plans">
+            <div class="vtimeline-content">
+              <h3>Implement Latent Pooling</h3>
+              <p>Secret sauce.</p>
+              <p class="more-content">Additional details about latent pooling can go here.</p>
+            </div>
+          </div>
+          <div class="vtimeline-header">
+            <h5>AI Engine</h5>
+          </div>
         </div>
       </div>
-      <div class="phase">
-        <p class="textFont phase-border" id="phase1">Phase 1<br />Public Good</p>
-      </div>
-      <div class="container">
-        <div class="timeline-item" date-is='2024-2027'>
-          <h2 class="textFontButton">Produce Public Good</h2>
-          <p class="textFont">Publically available predictions on all of the most popular and valuable data streams in the world. This includes government metrics, demographic statistics, price and market data, weather and envionment tracking, and more.</p>
-          <h2 class="textFontButton">Scale</h2>
-          <p class="textFont">As the number of Satori Neurons increases the network as a whole will be able to handle more predicting data streams, and will find better correlations between them. Satori will get better and better at producing its primary goal: the Satori public good of free and open prediction of the future.</p>
-        </div>
-      </div>
-      <div class="phase">
-        <p class="textFont phase-border" id="phase2">Phase 2<br />Market Platform</p>
-      </div>
-      <div class="container">
-        <div class="timeline-item" date-is='2027-2030'>
-          <h2 class="textFontButton">Develop Market Platform</h2>
-          <p class="textFont">Once matured, The Satori Network represents the skill of prediction; honed and developed by a vast number of machines around the globe. That developed machine labor is brought to market through the Satori prediction market platform. Here, buyers and sellers of future forecasting can come together. This requires building out the rest of the Blockchain protocol to support a myriad of market transactions for future forecasting.</p>
-        </div>
-      </div>
-      <div class="phase">
-        <p class="textFont phase-border" id="phase3">Phase 3<br />Fully Decentralized</p>
-      </div>
-      <div class="container">
-        <div class="timeline-item" date-is='2030 and beyond'>
-          <h2 class="textFontButton">Fully Functional DAO</h2>
-          <p class="textFont">Remove all centralizing training wheels of Satori. Prediction of the future should be something that is as free from corruption, as defended against manipulation, and as uncensorable as it is possible to make anything. To censor predictions is to manipulate the future.</p>
-        </div>
-      </div>
-      </center>
     </div>
-  </center>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+      <div class="vtimeline-container">
+        <div class="vtimeline">
+          <div class="vtimeline-header">
+            <h5>Decentralization</h5>
+          </div>
+          <div class="vtimeline-item vtimeline-accomplished">
+            <div class="vtimeline-content">
+              <h3>something</h3>
+              <p>getting started</p>
+              <p class="more-content">stuff</p>
+            </div>
+          </div>
+          <div class="vtimeline-header">
+            <h5>Decentralization</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+      <div class="vtimeline-container">
+        <div class="vtimeline">
+          <div class="vtimeline-header">
+            <h5>Infrastructure</h5>
+          </div>
+          <div class="vtimeline-item vtimeline-accomplished">
+            <div class="vtimeline-content">
+              <h3>something</h3>
+              <p>getting started</p>
+              <p class="more-content">stuff</p>
+            </div>
+          </div>
+          <div class="vtimeline-header">
+            <h5>Infrastructure</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</center>
