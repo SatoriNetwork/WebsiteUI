@@ -633,11 +633,15 @@
 
 <!-- ROADMAP -->
 <script>
-  document.querySelectorAll('.vtimeline-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const content = item.querySelector('.vtimeline-content');
-      content.classList.toggle('expanded');
-    });
-  });
+  //document.querySelectorAll('.vtimeline-item').forEach(item => {
+  //  item.addEventListener('click', () => {
+  //    const content = item.querySelector('.vtimeline-content');
+  //    content.classList.toggle('expanded');
+  //  });
+  //});
+  function vtimeline_expand(item) {
+    const content = item.querySelector('.vtimeline-content');
+    content.classList.toggle('expanded');
+  }
 </script>
 {% endblock %}
