@@ -24,8 +24,8 @@
     text-align: center;
     background: white;
     padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /*border-radius: 8px;*/
+    /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
     z-index: 1;
   }
   
@@ -73,7 +73,7 @@
   }
   
   .vtimeline-content.expanded p.more-content {
-    max-height: 100px; /* Adjust as necessary */
+    max-height: 150px; /* Adjust as necessary */
     opacity: 1;
   }
   
@@ -81,7 +81,7 @@
     border: 2px solid grey;
   }
   
-  .vtimeline-work-in-progress {
+  .vtimeline-in-progress {
     border: 2px dashed grey;
   }
   
@@ -96,35 +96,31 @@
     <div class="col-12 col-sm-12 col-md-6 col-lg-4">
       <div class="vtimeline-container">
         <div class="vtimeline">
-          <div class="vtimeline-header">
-            <h5>AI Engine</h5>
-          </div>
           <div class="vtimeline-item vtimeline-accomplished">
             <div class="vtimeline-content">
               <h3>Build MVP</h3>
-              <p>The AI Engine must: <br>• predict the future<br>• make better predictions over time.</p>
-              <p class="more-content">Additional details about building the MVP can go here.</p>
+              <p>The AI Engine must produce predictions the future and make better predictions over time.</p>
+              <p class="more-content">It does so using ML and AI algorithms, but as an MVP is not optimized.</p>
             </div>
           </div>
-          <div class="vtimeline-item vtimeline-work-in-progress">
+          <div class="vtimeline-item vtimeline-in-progress">
             <div class="vtimeline-content">
               <h3>Add simple GPT models</h3>
               <p>Chronos and other GPT models integrated with existing ML algorithms.</p>
-              <p class="more-content">Additional details about adding GPT models can go here.</p>
+              <p class="more-content">This allows the Satori AI Engine to take advantage of GPUs more efficiently.<br>This is in progress.</p>
             </div>
           </div>
           <div class="vtimeline-item vtimeline-plans">
             <div class="vtimeline-content">
               <h3>Improve Correlation Search</h3>
               <p>Leverage network effects for a more efficient guided search of correlated datastreams.</p>
-              <p class="more-content">Additional details about improving correlation search can go here.</p>
+              <p class="more-content">This allows the Satori AI Engine to become much more powerful as it finds intelligently searches datastreams to find contextual correlations.</p>
             </div>
           </div>
           <div class="vtimeline-item vtimeline-plans">
             <div class="vtimeline-content">
               <h3>Implement Latent Pooling</h3>
-              <p>Secret sauce.</p>
-              <p class="more-content">Additional details about latent pooling can go here.</p>
+              <p class="more-content">Secret sauce.</p>
             </div>
           </div>
           <div class="vtimeline-header">
@@ -136,14 +132,31 @@
     <div class="col-12 col-sm-12 col-md-6 col-lg-4">
       <div class="vtimeline-container">
         <div class="vtimeline">
-          <div class="vtimeline-header">
-            <h5>Decentralization</h5>
+          <div class="vtimeline-item vtimeline-accomplished">
+            <div class="vtimeline-content">
+              <h3>Peer-to-Peer Network</h3>
+              <p>Satori Neurons are able to send information to each other in a peer-to-peer fashion.</p>
+              <p class="more-content">As an initial layer of decentralization, this makes the Satori Network censorship resistent while also providing certain efficiencies inherent in direct communication.</p>
+            </div>
           </div>
           <div class="vtimeline-item vtimeline-accomplished">
             <div class="vtimeline-content">
-              <h3>something</h3>
-              <p>getting started</p>
-              <p class="more-content">stuff</p>
+              <h3>Multisig Rewards</h3>
+              <p>Daily mining rewards require multiple signatures to be approved.</p>
+              <p class="more-content">This means control over mining rewards is shared, sufficiently decentralizing Satori's mining algorithm.</p>
+            </div>
+          </div>
+          <div class="vtimeline-item vtimeline-in-progress">
+            <div class="vtimeline-content">
+              <h3>Additional Smart Contracts</h3>
+              <p>Vote and other features should eventually be handled by automated smart contracts rather than just (albeit auditable) cryptographic signatures.</p>
+              <p class="more-content">Smart contracts often have a cost which can be avoided by using cryptographic signatures instead. The results are auditable on chain, but they come with the drawback of trusting a centralized entity until results are verified. To remove the centralized component Smart Contracts must be involved.</p>
+            </div>
+          </div>
+          <div class="vtimeline-item vtimeline-plans">
+            <div class="vtimeline-content">
+              <h3>Fully Decentralized Autonomous Organization</h3>
+              <p class="more-content">This includes improvements to Satori's decentralized governance system, as well as the integration of 3rd party pubsub systems, and could also include new technology.</p>
             </div>
           </div>
           <div class="vtimeline-header">
@@ -155,16 +168,33 @@
     <div class="col-12 col-sm-12 col-md-6 col-lg-4">
       <div class="vtimeline-container">
         <div class="vtimeline">
-          <div class="vtimeline-header">
-            <h5>Infrastructure</h5>
+          <div class="vtimeline-item vtimeline-accomplished">
+            <div class="vtimeline-content">
+              <h3>Build the Satori Neuron</h3>
+              <p>The Satori Neuron is the software running on machines around the world, comprising the Satori Network.</p>
+              <p class="more-content">These neurons come equipt with a the Satori AI Engine, a wallet, the ability to allow node opperators to vote and provide information (as an oracle) to the network, and are fully automated.</p>
+            </div>
           </div>
           <div class="vtimeline-item vtimeline-accomplished">
             <div class="vtimeline-content">
-              <h3>something</h3>
-              <p>getting started</p>
-              <p class="more-content">stuff</p>
+              <h3>Build Satori Servers and Infrastructure</h3>
+              <p>Satori Servers support the Satori Network of Neurons by helping them coordinate their efforts.</p>
+              <p class="more-content">Most of the Satori Servers can be thought of as scaffolding meant to be replaced by blockchain and decentralized infrastructure and protocols once their functions have been matured.</p>
             </div>
           </div>
+          <div class="vtimeline-item vtimeline-in-progress">
+            <div class="vtimeline-content">
+              <h3>Continue to Iterate</h3>
+              <p>The Neuron and the infrastructure at large need updates as the Satori AI Engine is improved and The Satori Association's decentralization efforts continue.</p>
+              <p class="more-content">These improvements are incremental and also include refactoring and optimization.</p>
+            </div>
+          </div>
+          <div class="vtimeline-item vtimeline-plans">
+            <div class="vtimeline-content">
+              <h3>Replace</h3>
+              <p class="more-content">Once the functions are matured they can be embodied by decentralized infrastructure such as smart contrats and the Satori blockchains.</p>
+            </div>
+          </div>          
           <div class="vtimeline-header">
             <h5>Infrastructure</h5>
           </div>
