@@ -64,17 +64,17 @@
 												<br>
 												{% endif %}
 												echo "setting Satori to run on startup..."<br>
-												python -c """import os; import threading; path = os.path.join(os.environ['APPDATA'], r'Microsoft\Windows\Start Menu\Programs\Startup'); with open(os.path.join(path, 'satori.bat'), 'w') as f: f.write('start "docker" "C:\Program Files\Docker\Docker\Docker Desktop.exe" && start docker pull satorinet/satorineuron:v1 && start python -m satorisynapse.async && timeout /T 60 /nobreak > NUL && docker run --rm -it --name satorineuron -p 24601:24601 -v %APPDATA%\\Satori\\wallet:/Satori/Neuron/wallet -v %APPDATA%\\Satori\\config:/Satori/Neuron/config -v %APPDATA%\\Satori\\data:/Satori/Neuron/data -v %APPDATA%\\Satori\\models:/Satori/Neuron/models --env ENV=prod satorinet/satorineuron:v1 ./start.sh')"""<br>
+												python -c """import os; import threading; path = os.path.join(os.environ['APPDATA'], r'Microsoft\Windows\Start Menu\Programs\Startup'); with open(os.path.join(path, 'satori.bat'), 'w') as f: f.write('start "docker" "C:\Program Files\Docker\Docker\Docker Desktop.exe" && start docker pull satorinet/satorineuron:latest && start python -m satorisynapse.async && timeout /T 60 /nobreak > NUL && docker run --rm -it --name satorineuron -p 24601:24601 -v %APPDATA%\\Satori\\wallet:/Satori/Neuron/wallet -v %APPDATA%\\Satori\\config:/Satori/Neuron/config -v %APPDATA%\\Satori\\data:/Satori/Neuron/data -v %APPDATA%\\Satori\\models:/Satori/Neuron/models --env ENV=prod satorinet/satorineuron:latest ./start.sh')"""<br>
 												<br>
 												echo "starting Docker..."<br>
 												Start-Process -FilePath "C:\Program Files\Docker\Docker\Docker Desktop.exe" -WindowStyle Minimized<br>
-												docker pull satorinet/satorineuron:v1<br>
+												docker pull satorinet/satorineuron:latest<br>
 												<br>
 												echo "starting Satori p2p relay..."<br>
 												Start-Job -ScriptBlock { python -m satorisynapse.run async }<br>
 												<br>
 												echo "starting Satori..."<br>
-												docker run --rm -it --name satorineuron -p 24601:24601 -v ${env:APPDATA}\Satori\wallet:/Satori/Neuron/wallet -v ${env:APPDATA}\Satori\config:/Satori/Neuron/config -v ${env:APPDATA}\Satori\data:/Satori/Neuron/data -v ${env:APPDATA}\Satori\models:/Satori/Neuron/models --env ENV=prod satorinet/satorineuron:v1 ./start.sh<br>
+												docker run --rm -it --name satorineuron -p 24601:24601 -v ${env:APPDATA}\Satori\wallet:/Satori/Neuron/wallet -v ${env:APPDATA}\Satori\config:/Satori/Neuron/config -v ${env:APPDATA}\Satori\data:/Satori/Neuron/data -v ${env:APPDATA}\Satori\models:/Satori/Neuron/models --env ENV=prod satorinet/satorineuron:latest ./start.sh<br>
 											</code>
 										</p>
 									</div>
