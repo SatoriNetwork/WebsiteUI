@@ -20,7 +20,7 @@
   <center>
     <div class="fade-in">
       <form action="/search" method="post">
-        <input 
+        <input
         id="search"
         class="textFont"
         style='margin-top:10px; width: 400px;text-align: center; border-radius: 25px;'
@@ -44,10 +44,10 @@
           <p class="textFont">Open Source, Nonprofit</p>
           <p class="textFont">Decentralized AI</p>
           <p class="textFont">Future Oracle</p>
-          <div id='invite' style="margin-top:76px;">
+          <!--<div id='invite' style="margin-top:76px;">
             <div style="margin-bottom:4px;" class="textFont">get early access:</div>
             <input id="earlyAccess" class="textFont" style="width: 200px;text-align: center;border-radius: 25px;" type="text" value="" placeholder="enter email" onchange="saveInterest();">
-          </div>
+          </div>-->
         </center>
       </div>
   </div>
@@ -95,7 +95,7 @@
       '  <p class="textFont">EVR ETtu2aQna2JnU5FA6csVTy6fco4zHjhTcw</p>' +
       '</div>');
   }
-  
+
   function startVideo() {
     function getElementAtViewportCenter() {
       const centerX = window.innerWidth / 2;
@@ -241,7 +241,7 @@
           let allocation = data;
           document.getElementById('auditAddress').href = data.address
         });
-       
+
       }
     if (document.getElementById('auditToken').href.endsWith('#') || document.getElementById('auditAdminToken').href.endsWith('#')) {
       fetch('/association/token')
@@ -261,7 +261,7 @@
     getAllocation();
     getAuditable();
   }
-  
+
 </script>
 <script>
   showSearch();
@@ -330,7 +330,7 @@
       let x = parseStreams(e.data);
       if (!x.includes("No results found")) {
         centerMsgOutput.innerHTML = "";
-        searchResultsOutput.innerHTML = x        
+        searchResultsOutput.innerHTML = x
         askForPredictionsOf(-1, '[{"prediction": "", "time": "", "avg": "", "ts": ""}]');
       } else  {
         searchResultsOutput.innerHTML = "";
@@ -352,13 +352,13 @@
       }
     }
   }
-  
+
   function parseStreams(data) {
     const j = JSON.parse(data);
     let tableText = "";
     if (j.length == 0) {
       return '<div class="fade-in-fast" style="margin:50px;"><center><p class="textFont">No results found</p></center></div>';
-    }    
+    }
     for (let i = 0; i < j.length; i++) {
       tableText += (
         '<tr class="highlight" style="cursor:pointer;" onclick="askForPredictionsOf(' + j[i].id + ');">' +
@@ -479,7 +479,7 @@
   //var startedVideo = false;
   //if (window.location.pathname === '/' && !startedVideo) {
   //  sleep(2).then(startVideo);
-  //} 
+  //}
   //startedVideo = true;
 </script>
 
@@ -553,7 +553,7 @@
   function drawDistributionRate() {
 
     anychart.onDocumentReady(function () {
-      
+
       // add data
       var data = [
         ["2024", 0, 0, 100],
@@ -573,42 +573,42 @@
 
       // create a data set
       var dataSet = anychart.data.set(data);
-      
+
       // map the data for all series
       var firstSeriesData = dataSet.mapAs({x: 0, value: 1});
       var secondSeriesData = dataSet.mapAs({x: 0, value: 2});
       var thirdSeriesData = dataSet.mapAs({x: 0, value: 3});
-      
+
       // create a line chart
       var chart = anychart.line();
-      
+
       // create the series and name them
       var firstSeries = chart.line(firstSeriesData);
       var secondSeries = chart.line(secondSeriesData);
       var thirdSeries = chart.line(thirdSeriesData);
-      
+
       firstSeries.name("Coin Minted");
       secondSeries.name("Total Coins");
       thirdSeries.name("Inflation Rate");
-      
+
       firstSeries.stroke("#777777");
       secondSeries.stroke("#BBBBBB");
       thirdSeries.stroke("#DDDDDD");
-      
+
       // add a legend
       chart.legend().enabled(true);
-      
+
       // add a title
       chart.title("");
 
       // specify where to display the chart
       chart.container("distribution-rate");
-      
+
       // format y-axis labels with commas
       chart.yAxis().labels().format(function () {
         return this.value.toLocaleString();
       });
-      
+
       //var extraYScale = anychart.scales.linear();
       //chart.yAxis(1).orientation("right").title("");
       var yScale = chart.yScale();
@@ -619,13 +619,13 @@
 
 
       //chart.yAxis(1).orientation("right");
-      
-      
+
+
 
       // draw the resulting chart
       chart.draw();
       removeAnyChartCredits();
-      
+
     });
   }
   drawDistributionRate();
